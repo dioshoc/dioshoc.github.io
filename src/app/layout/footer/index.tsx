@@ -1,5 +1,5 @@
 import styles from "./styles.module.scss";
-import RocketImg from "../../../../public/favicon.png"
+import RocketImg from "@shared/assets/images/RocketImg.png"
 
 const Footer = () => {
   return (

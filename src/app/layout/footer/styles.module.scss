@@ -1,0 +1,14 @@
+@import "@app/styles";
+
+.footer {
+  padding: 4px 20px 20px 20px;
+  text-align: center;
+  background: $BLACK;
+
+  &__title {
+    @include secondaryFont;
+    color: $primary;
+    font-size: 18px;
+    font-weight: 800;
+  }
+}

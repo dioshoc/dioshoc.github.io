@@ -1,0 +1,63 @@
+@import "@app/styles";
+
+.button {
+  @include secondaryFont;
+  font-weight: 700;
+  border: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
+
+  &_text {
+    padding: 0;
+    color: $primary;
+  }
+
+  &_outlined {
+    color: $primary;
+  }
+
+  &_contained {
+    background-color: $primary;
+  }
+
+  &_outlined, &_contained {
+    padding: 8px 40px;
+    border-radius: 100px;
+    border: 1px solid $primary;
+  }
+
+  &_text, &_outlined, &_contained {
+    transition: opacity $transition;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  &_gradient {
+    padding: 0;
+    color: $white;
+    background-clip: text;
+    background-image: linear-gradient(98.25deg, #EBFF00 18.56%, #FF70D9 76.02%);
+
+    transition: color $transition;
+
+    &:hover {
+      color: transparent;
+    }
+
+    svg path {
+      transition: fill $transition;
+    }
+
+    svg rect[id=gradient] {
+      opacity: 0;
+      transition: opacity $transition;
+    }
+
+    &:hover svg rect[id=gradient]{
+      opacity: 1;
+    }
+  }
+}

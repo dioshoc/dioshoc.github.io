@@ -2,7 +2,10 @@
 
 .button {
   @include secondaryFont;
+  display: flex;
+  width: max-content;
   font-weight: 700;
+  text-decoration: none;
   border: none;
   background: none;
   outline: none;
@@ -24,7 +27,7 @@
   &_outlined, &_contained {
     padding: 8px 40px;
     border-radius: 100px;
-    border: 1px solid $primary;
+    border: 2px solid $primary;
   }
 
   &_text, &_outlined, &_contained {

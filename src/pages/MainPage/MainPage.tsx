@@ -1,19 +1,49 @@
 import Button from '@shared/ui/Button';
 import styles from './styles.module.scss';
-import OfferCard from '../../entities/offerCard';
+import OfferCard from '@entities/offerCard';
 import { offersMock } from './mock.ts';
 import { IOffer } from '@shared/types.ts';
+import earthImg from '@assets/images/earthImg.png';
+import Container from '@shared/ui/container';
 
 function MainPage() {
   return (
     <main className={styles['main-page']}>
-      <div className="container">
-        <section
-          className={`
-            ${styles['main-page__offers']}
-            ${styles['main-page__section']}
-          `}
-        >
+      <section className={styles['main-page__banner']}>
+        <Container>
+          <div className={styles['main-page__banner-wrapper']}>
+            <div className={styles['main-page__banner-img']}>
+              <img
+                src={earthImg}
+                alt=""
+              />
+            </div>
+            <div className={styles['main-page__banner-content']}>
+              <h1 className={styles['main-page__banner-title']}>
+                Discover the vast expanses of&nbsp;
+                <strong className={styles['main-page__banner-discharge']}>
+                  space
+                </strong>
+              </h1>
+              <p className={styles['main-page__banner-description']}>
+                Where the possibilities are&nbsp;
+                <strong className={styles['main-page__banner-discharge']}>
+                  endless!
+                </strong>
+              </p>
+              <Button
+                href="#"
+                className={styles['main-page__banner-link']}
+              >
+                Learn More
+              </Button>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className={styles['main-page__offers']}>
+        <Container>
           <h2 className={styles['main-page__section-title']}>Offers</h2>
 
           <div className={styles['offers-grid']}>
@@ -29,14 +59,11 @@ function MainPage() {
               />
             ))}
           </div>
-        </section>
+        </Container>
+      </section>
 
-        <section
-          className={`
-            ${styles['main-page__about']}
-            ${styles['main-page__section']} 
-         `}
-        >
+      <section className={styles['main-page__about']}>
+        <Container>
           <h2 className={styles['main-page__section-title']}>
             Embark on a space journey
           </h2>
@@ -61,8 +88,8 @@ function MainPage() {
           >
             Read more
           </Button>
-        </section>
-      </div>
+        </Container>
+      </section>
     </main>
   );
 }

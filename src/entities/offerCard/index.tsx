@@ -13,8 +13,9 @@ const OfferCard = ({ title, description, link, img, className }: Props) => {
       style={{
         background: `
           linear-gradient(180deg, #00000000 0%, #0F1420C9 100%),
-          url(${img})
-       `,
+          url(${img}) center center no-repeat
+        `,
+        backgroundSize: 'cover',
       }}
     >
       <h3 className={styles['offer-card__title']}>{title}</h3>

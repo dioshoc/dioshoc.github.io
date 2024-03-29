@@ -1,23 +1,48 @@
 @import "@app/styles";
 
 .main-page {
-  $this: &;
+  $mainPage: &;
 
+  padding-bottom: 50px;
+  grid-gap: 50px;
+  display: grid;
   color: $white;
   background-color: $sanJohn;
 
-  &__section {
-    padding-bottom: 60px;
+  @include _768M {
+    padding-bottom: 54px;
+    grid-gap: 54px;
+  }
 
-    &-title {
-      @include secondaryFont;
+  @include _992M {
+    padding-bottom: 60px;
+    grid-gap: 60px;
+  }
+
+  &__section-title {
+    @include secondaryFont;
+
+    font-size: 18px;
+
+    @include _768M {
+      font-size: 24px;
+    }
+
+    @include _992M {
       font-size: 32px;
-      font-weight: 800;
     }
   }
 
   &__about {
-    font-size: 20px;
+    font-size: 14px;
+
+    @include _768M {
+      font-size: 16px;
+    }
+
+    @include _992M {
+      font-size: 20px;
+    }
 
     &-text {
       padding: 16px 0;
@@ -25,8 +50,8 @@
     }
   }
 
-  &__offers{
-    #{$this}__section-title {
+  &__offers {
+    #{$mainPage}__section-title {
       margin-bottom: 40px;
     }
 
@@ -61,6 +86,111 @@
             }
           }
         }
+      }
+    }
+  }
+
+  &__banner {
+    $banner: &;
+
+    padding: 90px 0 44px;
+    background: linear-gradient(180deg, #00000000 -0.52%, #0F1420C9 99.48%), url("@shared/assets/images/space1Img.jpg") center;
+    background-size: cover;
+    overflow: hidden;
+
+    @include _768M {
+      padding: 90px 0 120px;
+    }
+
+    &-wrapper {
+      display: flex;
+      flex-direction: row-reverse;
+
+      @include _768 {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 22px;
+
+      @include _992 {
+        width: 80%;
+      }
+
+      @include _768 {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+      }
+
+      @include _992M {
+        padding-right: 20px;
+      }
+    }
+
+    &-title {
+      @include secondaryFont;
+      font-size: 36px;
+
+      @include _576M {
+        font-size: 48px;
+      }
+
+      @include _768M {
+        max-width: 90%;
+      }
+
+      @include _992M {
+        max-width: 100%;
+      }
+
+      @include _1024M {
+        font-size: 72px;
+      }
+
+      #{$banner}-discharge {
+        color: $secondary;
+      }
+    }
+
+    &-description {
+      @include secondaryFont;
+      font-size: 16px;
+
+      @include _576M {
+        font-size: 22px;
+      }
+
+      @include _1024M {
+        font-size: 32px;
+      }
+
+      #{$banner}-discharge {
+        color: $primary;
+      }
+    }
+
+    &-link {
+      font-size: 22px;
+    }
+
+    &-img {
+      max-height: 170px;
+      transform: translate(10px, -200px);
+
+      @include _768M {
+        max-width: 30%;
+        max-height: 330px;
+        transform: unset;
+      }
+
+      @include _992M {
+        max-width: unset;
       }
     }
   }

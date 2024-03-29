@@ -24,7 +24,8 @@
     "paths": {
       "@app/*": ["./app/*"],
       "@shared/*": ["./shared/*"],
-      "@assets/*": ["./shared/assets/*"]
+      "@assets/*": ["./shared/assets/*"],
+      "@entities/*": ["./entities/*"]
     },
     "plugins": [
       {

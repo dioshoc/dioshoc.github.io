@@ -1,1 +1,7 @@
 @import "styles";
+
+.container {
+  padding: 0 30px;
+  max-width: calc(1088px + 30px * 2);
+  margin: auto;
+}

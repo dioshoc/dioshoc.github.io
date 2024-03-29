@@ -25,9 +25,16 @@
       "@app/*": ["./app/*"],
       "@shared/*": ["./shared/*"],
       "@assets/*": ["./shared/assets/*"]
-
     },
-    "plugins": [{ "name": "typescript-plugin-css-modules" }]
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules",
+        "options": {
+          "classnameTransform": "dashesOnly",
+          "customMatcher": "\\.m\\.css$"
+        }
+      }
+    ]
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

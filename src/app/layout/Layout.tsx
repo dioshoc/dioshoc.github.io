@@ -1,13 +1,11 @@
-import React from "react";
-import Footer from "@app/layout/footer";
+import React from 'react';
+import Footer from '@app/layout/footer';
 
-export const Layout = ({ children }: {children: React.ReactNode}) => {
+export const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
-      <main>
-        { children }
-      </main>
-      <Footer/>
+      {children}
+      <Footer />
     </>
-  )
-}
+  );
+};

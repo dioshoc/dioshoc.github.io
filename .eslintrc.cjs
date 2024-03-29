@@ -8,12 +8,24 @@ module.exports = {
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh'],
+  plugins: ['react-refresh', 'prettier'],
   rules: {
+    'prettier/prettier': ["error", {
+      "trailingComma": "es5",
+      "tabWidth": 2,
+      "semi": true,
+      "singleQuote": true,
+      "arrowParens": "always",
+      "htmlWhitespaceSensitivity": "ignore",
+      "bracketSameLine": false,
+      "singleAttributePerLine": true,
+      "bracketSpacing": true,
+    }],
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },
     ],
-    "indent": ["error", 2]
+    "indent": ["error", 2],
+    "max-len": ["error", { "comments": 80 }],
   },
 }

@@ -1,7 +1,7 @@
-import space1Img from '@assets/images/space3.jpg';
-import space2Img from '@assets/images/space5.jpg';
-import space3Img from '@assets/images/space2.jpg';
-import space4Img from '@assets/images/space4.jpg';
+import space1Img from '@assets/images/space3Img.jpg';
+import space2Img from '@assets/images/space5Img.jpg';
+import space3Img from '@assets/images/space2Img.jpg';
+import space4Img from '@assets/images/space4Img.jpg';
 import { IOffer } from '@shared/types.ts';
 
 export const offersMock: IOffer[] = [

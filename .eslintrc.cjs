@@ -25,7 +25,6 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
-    "indent": ["error", 2],
     "max-len": ["error", { "comments": 80 }],
   },
 }

@@ -6,7 +6,7 @@ import WalletIcon from '@assets/svg/WalletIcon.tsx';
 import { useState } from 'react';
 
 const Header = () => {
-  const [isShowMobileMenu, setShowMobileMenu] = useState(false);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   const handleToggleMobileMenu = () => {
     setShowMobileMenu((prevValue) => !prevValue);
@@ -34,24 +34,15 @@ const Header = () => {
     <header className={styles['header']}>
       <Container>
         <div className={styles['header__wrapper']}>
-          <LogoIcon />
-          <div
-            className={isShowMobileMenu ? styles['header__mobile-show'] : ''}
-          >
-            <div>
-              <div
-                className={styles['header__mobile-backdrop']}
-                onClick={handleToggleMobileMenu}
-              />
-
-              <Button
-                type="text"
-                className={styles['header__mobile-btn']}
-                onClick={handleToggleMobileMenu}
-              >
-                <span className={styles['header__mobile-icon']}></span>
-              </Button>
-            </div>
+          <LogoIcon className={styles['header__logo']} />
+          <div className={showMobileMenu ? styles['header__mobile_show'] : ''}>
+            <Button
+              type="text"
+              className={styles['header__mobile-btn']}
+              onClick={handleToggleMobileMenu}
+            >
+              <span className={styles['header__mobile-icon']}></span>
+            </Button>
 
             <nav>
               <ol className={styles['header__nav']}>
@@ -74,6 +65,13 @@ const Header = () => {
           </div>
         </div>
       </Container>
+      <div
+        className={`
+          ${styles['header__backdrop']}
+          ${showMobileMenu ? styles['header__backdrop_show'] : ''}
+        `}
+        onClick={handleToggleMobileMenu}
+      />
     </header>
   );
 };

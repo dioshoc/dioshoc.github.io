@@ -5,14 +5,29 @@
 
   z-index: 100;
   top: 0;
-  padding: 28px 0;
+  left: 0;
+  width: 100%;
+  padding: 12px 0;
   position: sticky;
   background: $black;
+
+  @include _768M {
+    padding: 28px 0;
+  }
+
+  @include _992M {
+    padding: 24px 0 20px;
+  }
 
   &__wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  &__logo {
+    z-index: 120;
+    position: relative;
   }
 
   &__nav {
@@ -28,15 +43,23 @@
     }
 
     @include _992 {
-      height: 100dvh;
-      width: 30%;
       right: 0;
-      top: 0;
-      padding: 70px 30px;
+      top: 100%;
+      height: 100dvh;
+      max-width: 0;
+      width: 40%;
       position: absolute;
       background: $black;
-      transform: translateX(100%);
-      transition: transform $transition;
+      overflow: hidden;
+      transition: max-width $transition, box-shadow 1s;
+    }
+
+    @include _768 {
+      width: 100%;
+      max-width: 100%;
+      max-height: 0;
+      padding: 0;
+      transition: max-height $transition;
     }
 
     &-item {
@@ -51,9 +74,33 @@
 
     &-btn {
       @include _992 {
-        padding: 10px;
+        padding: 10px 0 10px 40px;
         width: 100%;
       }
+    }
+  }
+
+  &__backdrop {
+    @include _768M {
+      z-index: 90;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100lvh;
+      position: absolute;
+      background: #00000090;
+      opacity: 0;
+      max-width: 0;
+      box-shadow: 50px 0 200px 50px;
+      transition: opacity $transition, max-width $transition;
+
+      &_show {
+        opacity: 1;
+        max-width: 100%;
+      }
+    }
+    @include _992M {
+      display: none;
     }
   }
 
@@ -108,46 +155,30 @@
       }
     }
 
-    &-backdrop {
-      @include _992 {
-        z-index: 90;
-        left: 0;
-        top: 0;
-        width: 100vw;
-        height: 100dvh;
-        position: absolute;
-        display: block;
-        background: #00000090;
-        opacity: 0;
-        transform: translateX(100%);
+    &_show {
 
-        transition: opacity $transition;
-      }
-    }
-
-    &-show {
-      @include _992 {
-        #{$header}__nav {
-          transform: translateX(0);
+      #{$header}__nav {
+        @include _992 {
+          max-width: 100%;
+          box-shadow: 0 0 100px 70px;
         }
+        @include _768 {
+          max-height: 100dvh;
+        }
+      }
 
-        #{$mobile} {
-          &-backdrop {
-            opacity: 1;
-            transform: translateX(0);
+      #{$mobile}-icon {
+        @include _992 {
+
+          transform: rotate(45deg);
+
+          &:before {
+            bottom: 0;
+            transform: rotate(-90deg);
           }
 
-          &-icon {
-            transform: rotate(45deg);
-
-            &:before {
-              bottom: 0;
-              transform: rotate(-90deg);
-            }
-
-            &:after {
-              top: 0;
-            }
+          &:after {
+            top: 0;
           }
         }
       }

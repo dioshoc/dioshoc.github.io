@@ -1,0 +1,156 @@
+@import "@app/styles";
+
+.header {
+  $header: &;
+
+  z-index: 100;
+  top: 0;
+  padding: 28px 0;
+  position: sticky;
+  background: $black;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__nav {
+    z-index: 110;
+    position: relative;
+    @include secondaryFont;
+    font-size: 18px;
+
+    @include _992M {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    @include _992 {
+      height: 100dvh;
+      width: 30%;
+      right: 0;
+      top: 0;
+      padding: 70px 30px;
+      position: absolute;
+      background: $black;
+      transform: translateX(100%);
+      transition: transform $transition;
+    }
+
+    &-item {
+      @include _992 {
+        transition: background $transition;
+
+        &:hover {
+          background: #222222;
+        }
+      }
+    }
+
+    &-btn {
+      @include _992 {
+        padding: 10px;
+        width: 100%;
+      }
+    }
+  }
+
+  &__mobile {
+    $mobile: &;
+
+    &-btn {
+      z-index: 150;
+      width: 30px;
+      height: 30px;
+      position: relative;
+      align-items: center;
+      justify-content: center;
+
+      @include _992M {
+        display: none;
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    &-icon {
+      width: 22px;
+      height: 3px;
+      display: block;
+      background: $white;
+      border-radius: 2px;
+      position: relative;
+
+      transition: transform $transition;
+
+      &:after, &:before {
+        content: '';
+        width: 22px;
+        height: 3px;
+        display: block;
+        background: $white;
+        border-radius: 2px;
+        position: absolute;
+
+        transition: transform $transition, top $transition, bottom $transition;
+      }
+
+      &:before {
+        bottom: 8px;
+      }
+
+      &:after {
+        top: 8px;
+      }
+    }
+
+    &-backdrop {
+      @include _992 {
+        z-index: 90;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100dvh;
+        position: absolute;
+        display: block;
+        background: #00000090;
+        opacity: 0;
+        transform: translateX(100%);
+
+        transition: opacity $transition;
+      }
+    }
+
+    &-show {
+      @include _992 {
+        #{$header}__nav {
+          transform: translateX(0);
+        }
+
+        #{$mobile} {
+          &-backdrop {
+            opacity: 1;
+            transform: translateX(0);
+          }
+
+          &-icon {
+            transform: rotate(45deg);
+
+            &:before {
+              bottom: 0;
+              transform: rotate(-90deg);
+            }
+
+            &:after {
+              top: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

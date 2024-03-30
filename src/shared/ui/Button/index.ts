@@ -6,9 +6,16 @@ interface Props {
   children: React.ReactNode;
   type?: 'text' | 'outlined' | 'contained' | 'gradient';
   className?: string;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-const Button = ({ href, children, type = 'contained', className }: Props) => {
+const Button = ({
+  href,
+  children,
+  type = 'contained',
+  className,
+  onClick,
+}: Props) => {
   const additionalClasses = className ? `${className}` : '';
 
   const typeClass = {
@@ -21,6 +28,7 @@ const Button = ({ href, children, type = 'contained', className }: Props) => {
   const arg = {
     href,
     className: `${styles.button} ${styles[typeClass]} ${additionalClasses}`,
+    onClick,
   };
   const component = href ? 'a' : 'button';
 

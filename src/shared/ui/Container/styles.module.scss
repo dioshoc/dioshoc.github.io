@@ -1,0 +1,11 @@
+@import "@app/styles";
+
+.container {
+  padding: 0 20px;
+  max-width: calc(1088px);
+  margin: auto;
+
+  @include _576M {
+    padding: 0 30px;
+  }
+}

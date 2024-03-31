@@ -1,11 +1,11 @@
 @import "@app/styles";
 
 .button {
-  @include secondaryFont;
   display: flex;
   width: max-content;
   font-weight: 700;
   text-decoration: none;
+  line-height: $lineHeight;
   border: none;
   background: none;
   outline: none;
@@ -27,9 +27,13 @@
   }
 
   &_outlined, &_contained {
-    padding: 8px 40px;
+    padding: 6px 38px;
     border-radius: 100px;
     border: 2px solid $primary;
+
+    @include _992M {
+      padding: 12px 38px;
+    }
   }
 
   &_text, &_outlined, &_contained {

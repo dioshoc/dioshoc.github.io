@@ -1,35 +1,38 @@
 @import "@app/styles";
 
 .offer-card {
-  padding: 26px;
   height: 100%;
+  padding: 32px 26px;
   gap: 22px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   border-radius: 10px;
   box-sizing: border-box;
-  background-blend-mode: multiply;
+
+  @include _768M {
+    padding: 28px 26px;
+  }
 
   @include _992M {
     padding: 36px;
   }
 
   &__title {
-    @include secondaryFont;
     font-size: 40px;
+    max-width: 90%;
+
+    @include _576M {
+      max-width: 84%;
+    }
 
     @include _992M {
       font-size: 46px;
-    }
-
-    @include _576M {
-      max-width: 60%;
+      max-width: 62%;
     }
   }
 
   &__description {
-    @include secondaryFont;
     font-size: 16px;
 
     @include _992M {
@@ -38,6 +41,9 @@
   }
 
   &__link {
-    padding: 14px 40px;
+    font-size: 16px;
+    @include _992M {
+      font-size: 22px;
+    }
   }
 }

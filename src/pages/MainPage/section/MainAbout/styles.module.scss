@@ -1,0 +1,54 @@
+@import "@app/styles";
+
+.main-about {
+  font-size: 14px;
+
+  @include _768M {
+    font-size: 16px;
+  }
+
+  @include _992M {
+    font-size: 20px;
+  }
+
+  &__title {
+    font-size: 18px;
+    line-height: $lineHeight;
+    margin-bottom: 16px;
+
+    @include _768M {
+      margin-bottom: 14px;
+      font-size: 24px;
+    }
+
+    @include _992M {
+      margin-bottom: 20px;
+      font-size: 32px;
+    }
+  }
+
+  &__text {
+    opacity: 0.6;
+    margin-bottom: 20px;
+
+    @include _768 {
+      $string: 3;
+
+      max-height: $lineHeight * $string;
+      display: -webkit-box;
+      -webkit-line-clamp: $string;
+      overflow: hidden;
+      transition: max-height $transition, -webkit-line-clamp $transition;
+
+      &_show {
+        max-height: $lineHeight * 20;
+      }
+    }
+  }
+
+  &__button {
+    @include _768M{
+      display: none;
+    }
+  }
+}

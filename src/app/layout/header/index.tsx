@@ -1,9 +1,10 @@
-import Container from '@shared/ui/container';
+import Container from '@shared/ui/Container';
 import Button from '@shared/ui/Button';
 import LogoIcon from '@assets/svg/LogoIcon.tsx';
-import styles from './styles.module.scss';
 import WalletIcon from '@assets/svg/WalletIcon.tsx';
 import { useState } from 'react';
+import cn from 'classname';
+import styles from './styles.module.scss';
 
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -33,7 +34,7 @@ const Header = () => {
       <Container>
         <div className={styles['header__wrapper']}>
           <LogoIcon className={styles['header__logo']} />
-          <div className={showMobileMenu ? styles['header__mobile_show'] : ''}>
+          <div className={cn(showMobileMenu && styles['header__mobile_show'])}>
             <Button
               type="text"
               className={styles['header__mobile-btn']}
@@ -43,7 +44,7 @@ const Header = () => {
             </Button>
 
             <nav>
-              <ol className={styles['header__nav']}>
+              <ul className={styles['header__nav']}>
                 {navigation.map(({ id, content, link }) => (
                   <li
                     key={id}
@@ -58,18 +59,11 @@ const Header = () => {
                     </Button>
                   </li>
                 ))}
-              </ol>
+              </ul>
             </nav>
           </div>
         </div>
       </Container>
-      <div
-        className={`
-          ${styles['header__backdrop']}
-          ${showMobileMenu ? styles['header__backdrop_show'] : ''}
-        `}
-        onClick={handleToggleMobileMenu}
-      />
     </header>
   );
 };

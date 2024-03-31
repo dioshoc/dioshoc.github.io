@@ -6,7 +6,6 @@
   background: $black;
 
   &__title {
-    @include secondaryFont;
     color: $primary;
     font-size: 18px;
   }

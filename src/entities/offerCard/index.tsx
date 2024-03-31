@@ -1,6 +1,6 @@
 import Button from '@shared/ui/Button';
-import styles from './styles.module.scss';
 import { IOffer } from '@shared/types.ts';
+import styles from './styles.module.scss';
 
 interface Props extends IOffer {
   className?: string;
@@ -18,7 +18,7 @@ const OfferCard = ({
       className={`${styles['offer-card']} ${className}`}
       style={{
         background: `
-          linear-gradient(180deg, #00000000 0%, #0F1420C9 100%),
+          linear-gradient(270deg, #00000000 0%, #0F1420C9 100%),
           url(${img}) center center / cover no-repeat
         `,
       }}

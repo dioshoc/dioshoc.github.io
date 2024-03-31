@@ -13,11 +13,9 @@ const Button = ({
   href,
   children,
   type = 'contained',
-  className,
+  className = '',
   onClick,
 }: Props) => {
-  const additionalClasses = className ? `${className}` : '';
-
   const typeClass = {
     text: 'button_text',
     outlined: 'button_outlined',
@@ -27,7 +25,7 @@ const Button = ({
 
   const arg = {
     href,
-    className: `${styles.button} ${styles[typeClass]} ${additionalClasses}`,
+    className: `${styles.button} ${styles[typeClass]} ${className}`,
     onClick,
   };
   const component = href ? 'a' : 'button';

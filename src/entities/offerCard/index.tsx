@@ -6,7 +6,13 @@ interface Props extends IOffer {
   className?: string;
 }
 
-const OfferCard = ({ title, description, link, img, className }: Props) => {
+const OfferCard = ({
+  title,
+  description,
+  link,
+  img,
+  className = '',
+}: Props) => {
   return (
     <article
       className={`${styles['offer-card']} ${className}`}

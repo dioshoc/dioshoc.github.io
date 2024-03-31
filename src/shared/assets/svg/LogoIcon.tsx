@@ -1,6 +1,11 @@
 import { SvgProps } from '@assets/svg/type.ts';
 
-const LogoIcon = ({ width = 104, height = 35, color = 'none', className }: SvgProps) => (
+const LogoIcon = ({
+  width = 104,
+  height = 35,
+  color = 'none',
+  className
+}: SvgProps) => (
   <svg
     width={width}
     height={height}
@@ -24,4 +29,3 @@ const LogoIcon = ({ width = 104, height = 35, color = 'none', className }: SvgPr
 );
 
 export default LogoIcon;
-

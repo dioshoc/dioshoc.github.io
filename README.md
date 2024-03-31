@@ -2,9 +2,10 @@
 
 Test task for the company
 
-Vite was used to create the project
-
-node version: 18.18.2
+### Versions
+node version: 18.18.2 <br>
 npm version: 10.4.0
 
-Feature-Sliced Design architectural pattern: https://feature-sliced.design/
+### Architecture
+
+Feature-Sliced Design: https://feature-sliced.design/

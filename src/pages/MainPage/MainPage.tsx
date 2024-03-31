@@ -15,7 +15,7 @@ function MainPage() {
             <div className={styles['main-page__banner-img']}>
               <img
                 src={earthImg}
-                alt=""
+                alt="Discover the vast expanses of space"
               />
             </div>
             <div className={styles['main-page__banner-content']}>

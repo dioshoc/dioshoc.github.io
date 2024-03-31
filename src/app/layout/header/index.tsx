@@ -8,9 +8,7 @@ import { useState } from 'react';
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
-  const handleToggleMobileMenu = () => {
-    setShowMobileMenu((prevValue) => !prevValue);
-  };
+  const handleToggleMobileMenu = () => setShowMobileMenu(!showMobileMenu);
 
   const navigation = [
     {

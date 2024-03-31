@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+runs:
+  using: 'node20'
+  main: 'main.js'
+
 jobs:
   build:
     name: Build
@@ -17,13 +21,11 @@ jobs:
 
       - name: Setup Node
         uses: actions/setup-node@v1
-        with:
-          node-version: 20
+
 
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
-        with:
-          node-version: 20
+
 
       - name: Build project
         run: npm run build

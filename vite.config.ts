@@ -4,9 +4,15 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  server: {
-    host: true,
+  build: {
+    outDir: 'build',
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'index.html'),
+      },
+    },
   },
+
   resolve: {
     alias: [
       { find: '@app', replacement: path.resolve(__dirname, 'src/app') },

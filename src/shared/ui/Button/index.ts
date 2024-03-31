@@ -1,4 +1,5 @@
 import React, { createElement } from 'react';
+import cn from 'classname';
 import styles from './styles.module.scss';
 
 interface Props {
@@ -25,7 +26,7 @@ const Button = ({
 
   const arg = {
     href,
-    className: `${styles.button} ${styles[typeClass]} ${className}`,
+    className: cn(styles.button, styles[typeClass], className),
     onClick,
   };
   const component = href ? 'a' : 'button';

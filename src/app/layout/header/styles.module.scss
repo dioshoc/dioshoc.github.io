@@ -11,6 +11,10 @@
   position: sticky;
   background: $black;
 
+  @include _768 {
+    touch-action: none;
+  }
+
   @include _768M {
     padding: 24px 0;
   }

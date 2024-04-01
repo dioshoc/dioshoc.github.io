@@ -33,7 +33,9 @@ const Header = () => {
     <header className={styles['header']}>
       <Container>
         <div className={styles['header__wrapper']}>
-          <LogoIcon className={styles['header__logo']} />
+          <a href="#">
+            <LogoIcon className={styles['header__logo']} />
+          </a>
           <div className={cn(showMobileMenu && styles['header__mobile_show'])}>
             <Button
               type="text"
